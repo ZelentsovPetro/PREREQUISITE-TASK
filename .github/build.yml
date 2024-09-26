@@ -1,0 +1,27 @@
+name: build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+      - name: Create .env file
+        run: |
+          touch .env
+          echo ENVIRONMENT=${{ inputs.env }} >> .env
+          cat .env
+      - name: Install dependencies
+        run: npm ci
+      - name: Check code style
+        run: npm run lint
+      - name: Run tests
+        run: npm run test

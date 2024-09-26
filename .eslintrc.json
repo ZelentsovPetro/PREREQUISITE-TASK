@@ -1,0 +1,26 @@
+{
+  "extends": "./node_modules/gts/",
+  "rules": {
+    "@typescript-eslint/switch-exhaustiveness-check": "error",
+    "quotes": [
+      "warn",
+      "double",
+      {
+        "allowTemplateLiterals": true,
+        "avoidEscape": true
+      }
+    ]
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "overrides": [
+    {
+      "files": ["*.spec.ts", "*.test.ts", "framework/config/**", "framework/data/**", "framework/pages/**"],
+      "rules": {
+        "n/no-unpublished-import": "off"
+      }
+    }
+  ]
+}
