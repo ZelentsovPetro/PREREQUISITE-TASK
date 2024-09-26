@@ -14,11 +14,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-      - name: Create .env file
-        run: |
-          touch .env
-          echo ENVIRONMENT=${{ inputs.env }} >> .env
-          cat .env
       - name: Install dependencies
         run: npm install
       - name: Check code style
@@ -26,4 +21,6 @@ jobs:
       - name: Install playwright browsers
         run: npx playwright install --with-deps
       - name: Run tests
-        run: npm run test
+        env:
+          ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
+        run: npm run tests
