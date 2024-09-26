@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test --config=framework/config/playwright.config.ts",
+    "tests": "npx playwright test --config=framework/config/playwright.config.ts",
     "lint": "gts lint"
   },
   "author": "petro_zelentsov",
