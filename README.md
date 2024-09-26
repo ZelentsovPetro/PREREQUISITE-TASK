@@ -1,4 +1,4 @@
-# Test Automation Framework for ReserveBar applications
+# Test Automation Framework
 
 ## Based on
 * [Node.js](https://nodejs.org/en/) as a JavaScript runtime;
