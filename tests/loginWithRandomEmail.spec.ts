@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { LoginPage } from "../framework/pages/loginPage";
 import { UserFactory } from "../framework/data/userFactory";
 
-const testTitle = "Login with random login and password";
+const testTitle = "Login with random email and password";
 
 test(testTitle, async ({ page }) => {
   const loginPage = new LoginPage(page);
@@ -16,8 +16,9 @@ test(testTitle, async ({ page }) => {
     await expect(loginPage.welcomeHeader).toHaveText(welcomeHeader);
   });
 
-  await test.step("Login with random login and password", async () => {
-    const errorMessage = "Bad Credentials";
+  await test.step("Login with random email and password", async () => {
+    const errorMessage =
+      "User name may contain only Latin, numeric characters, hyphen, underscore, dot (from 1 to 128 symbols)";
     await loginPage.signIn(randomUser);
 
     await expect(loginPage.errorMessage).toHaveText(errorMessage);
