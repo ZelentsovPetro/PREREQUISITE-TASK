@@ -26,7 +26,7 @@ export class LoginPage {
   }
 
   async goto() {
-    await this.page.goto(this.url, { waitUntil: "domcontentloaded" });
+    await this.page.goto(this.url, { waitUntil: "load" });
   }
 
   async signIn(user: IUser) {
