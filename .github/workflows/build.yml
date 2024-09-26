@@ -19,10 +19,10 @@ jobs:
           touch .env
           echo ENVIRONMENT=${{ inputs.env }} >> .env
           cat .env
-      - name: Check code style
-        run: npm run lint
       - name: Install dependencies
         run: npm install
+      - name: Check code style
+        run: npm run lint
       - name: Install playwright browsers
         run: npx playwright install --with-deps
       - name: Run tests
