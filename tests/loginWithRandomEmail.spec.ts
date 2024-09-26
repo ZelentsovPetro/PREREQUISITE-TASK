@@ -17,7 +17,8 @@ test(testTitle, async ({ page }) => {
   });
 
   await test.step("Login with random email and password", async () => {
-    const errorMessage = "User name may contain only Latin, numeric characters, hyphen, underscore, dot (from 1 to 128 symbols)";
+    const errorMessage =
+      "User name may contain only Latin, numeric characters, hyphen, underscore, dot (from 1 to 128 symbols)";
     await loginPage.signIn(randomUser);
 
     await expect(loginPage.errorMessage).toHaveText(errorMessage);
