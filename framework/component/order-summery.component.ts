@@ -1,4 +1,4 @@
-import {Locator, Page} from "@playwright/test";
+import { Locator, Page } from "@playwright/test";
 
 export class OrderSummeryComponent {
   readonly page: Page;
@@ -12,16 +12,16 @@ export class OrderSummeryComponent {
 
   constructor(page: Page) {
     this.page = page;
-    this.orderSummeryBlock = this.page.locator('#orderSummary');
+    this.orderSummeryBlock = this.page.locator("#orderSummary");
     this.productName = this.orderSummeryBlock.locator('[class="product-name"]');
     this.addonName = this.orderSummeryBlock.locator('[class="pull-left float-left"]').first();
-    this.totalSections = this.orderSummeryBlock.locator('span.amt');
+    this.totalSections = this.orderSummeryBlock.locator("span.amt");
     this.continueButton = this.orderSummeryBlock.locator('button[type= "submit"]');
-    this.checkoutButton = this.orderSummeryBlock.locator('#checkout');
-    this.subTotalPrice = this.orderSummeryBlock.locator('#subtotal');
+    this.checkoutButton = this.orderSummeryBlock.locator("#checkout");
+    this.subTotalPrice = this.orderSummeryBlock.locator("#subtotal");
   }
 
-  async getTotalPrise(){
+  async getTotalPrise() {
     const prise = await this.totalSections.textContent();
 
     if (!prise) {
@@ -31,7 +31,7 @@ export class OrderSummeryComponent {
     return parseFloat(prise?.match(/[\d.]+/)?.[0] ?? "0");
   }
 
-  async getProductNameFromOrderSummery(): Promise<string | null > {
+  async getProductNameFromOrderSummery(): Promise<string | null> {
     return await this.productName.textContent();
   }
 
@@ -51,5 +51,4 @@ export class OrderSummeryComponent {
     await this.checkoutButton.click();
     await this.page.waitForLoadState("networkidle");
   }
-
 }

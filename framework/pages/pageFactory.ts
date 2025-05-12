@@ -2,7 +2,7 @@ import { Page } from "@playwright/test";
 import { CPanelLicensesPage } from "./cpanel-page";
 import { ConfigurePage } from "./configure-page";
 import { ReviewPage } from "./review-page";
-import {CheckoutPage} from "./checkout-page";
+import { CheckoutPage } from "./checkout-page";
 
 //Ideally, in order not to create objects constantly,
 // you should use fixtures and create a separate file for the test date,

@@ -1,6 +1,6 @@
-import {Locator, Page, expect} from "@playwright/test";
-import {OrderSummeryComponent} from "../component/order-summery.component";
-import {BasePage} from "./base-page";
+import { Locator, Page, expect } from "@playwright/test";
+import { OrderSummeryComponent } from "../component/order-summery.component";
+import { BasePage } from "./base-page";
 
 export class ReviewPage extends BasePage {
   readonly pageTitle: Locator;
@@ -28,10 +28,10 @@ export class ReviewPage extends BasePage {
     const subtotalText = await orderSummery.subTotalPrice.textContent();
 
     const total = priceList
-      .map(text => parseFloat(text.replace(/[^\d.]/g, '')))
+      .map((text) => parseFloat(text.replace(/[^\d.]/g, "")))
       .reduce((sum, price) => sum + price, 0);
 
-    const subtotal = parseFloat(subtotalText!.replace(/[^\d.]/g, ''));
+    const subtotal = parseFloat(subtotalText!.replace(/[^\d.]/g, ""));
 
     expect(total).toBeCloseTo(subtotal, 2);
   }
