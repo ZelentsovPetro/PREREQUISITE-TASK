@@ -1,6 +1,6 @@
 import { IEnvironmentConfig } from "../interfaces/environment-config";
 export const environments: IEnvironmentConfig = {
-  DEV: "???",
+  TEST: process.env.BASE_URL as string,
   STAGING: "???",
-  PROD: process.env.ENVIRONMENT as string,
+  PROD: "???",
 };
