@@ -1,5 +1,5 @@
 export interface IEnvironmentConfig {
-  DEV: string;
+  TEST: string;
   STAGING: string;
   PROD: string;
 }
