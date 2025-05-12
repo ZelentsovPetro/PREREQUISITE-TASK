@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { IUser} from "../interfaces/interfaces";
+import { IUser } from "../interfaces/interfaces";
 
 export class UserFactory {
   static getRandomUser(): IUser {
@@ -7,11 +7,11 @@ export class UserFactory {
       userName: faker.internet.email(),
       password: faker.internet.password({ length: 10 }),
     };
-  };
+  }
 
-  static getRandomIP()  {
+  static getRandomIP() {
     return {
-      ip: faker.internet.ipv4()
-    }
+      ip: faker.internet.ipv4(),
+    };
   }
 }

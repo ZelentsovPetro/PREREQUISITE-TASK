@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import {environments} from "../data/environment";
+import { environments } from "../data/environment";
 
 export abstract class BasePage {
   readonly url: string;

@@ -1,5 +1,5 @@
 import { Locator, Page } from "@playwright/test";
-import {BasePage} from "./base-page";
+import { BasePage } from "./base-page";
 
 export class CPanelLicensesPage extends BasePage {
   readonly pageLogo: Locator;
@@ -7,7 +7,7 @@ export class CPanelLicensesPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.pageLogo = this.page.locator('#header');
+    this.pageLogo = this.page.locator("#header");
     this.orderNowButtonsList = this.page.locator('[class*="btn-order-now"]');
   }
 
